@@ -7,7 +7,7 @@ copy or use the software.
 
                           License Agreement
                For Open Source Computer Vision Library
-					   (BSD 3-Clause "New" or "Revised" License)
+	      (BSD 3-Clause "New" or "Revised" License)
 
 Copyright (C) 2008, Google Inc, Google Corporation, all rights reserved.
 Third party copyrights are property of their respective owners.
