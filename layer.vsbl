@@ -1,0 +1,31 @@
+/* layer.vsbl file for Google Test layer */
+
+/*
+ * Copyright (c) 2018-2019 Wind River Systems, Inc.
+ *
+ * The right to copy, distribute, modify, or otherwise make use
+ * of this software may be licensed only pursuant to the terms
+ * of an applicable Wind River license agreement.
+ */
+
+/*
+Modification history
+--------------------
+15feb19,pfl  kernel mkdir() POSIX compliant (V7COR-6651)
+27nov18,gxu  create for US129093
+*/
+
+
+Layer GTEST {
+    SYNOPSIS        Google Test library
+    HELP            This option enables google test for RTPs and DKMs. \
+                    This functionality is being provided as a  \
+                    technology preview.
+    VERSION         1.8.0.0 
+    VENDOR          Wind River
+    FEATURE         OPEN_SOURCE
+    VSB_REQUIRES
+    FEATURE_REQUIRES {CORE POSIX_MKDIR}
+    OPTIONAL        YES
+    DEFAULT         NO
+    }
