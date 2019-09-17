@@ -42,7 +42,7 @@ file.
 
 1. Download the **vxworks7-google-test Private* from the following location:
 
-https://github.com/Wind-River/vxworks7-google-test
+   https://github.com/Wind-River/vxworks7-google-test
 
 2. Set WIND_LAYER_PATHS to point to the vxworks7-google-test directory. 
 Command-line users may set this directly using export on Linux or set on 
