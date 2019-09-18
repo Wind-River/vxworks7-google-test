@@ -329,7 +329,7 @@ bool FilePath::CreateFolder() const {
 #elif GTEST_OS_WINDOWS
   int result = _mkdir(pathname_.c_str());
 #else
-  int result = mkdir(pathname_.c_str(),0777);
+  int result = mkdir(pathname_.c_str(), 0777);
 #endif  // GTEST_OS_WINDOWS_MOBILE
 
   if (result == -1) {

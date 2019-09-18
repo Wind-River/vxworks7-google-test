@@ -49,6 +49,11 @@
 
 // GOOGLETEST_CM0001 DO NOT DELETE
 
+/* Modification History -------------------- 2019-09-18:
+Change definitions for VxWorks
+Add help funtions for unloading kernel module for VxWorks.
+*/
+
 #ifndef GTEST_INCLUDE_GTEST_GTEST_H_
 #define GTEST_INCLUDE_GTEST_GTEST_H_
 
