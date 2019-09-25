@@ -1,3 +1,4 @@
+//© Copyright, Wind River Systems, All Rights Reserved.
 // Copyright 2005, Google Inc.
 // All rights reserved.
 //
