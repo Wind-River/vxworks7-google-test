@@ -4,18 +4,10 @@ Google Test support for VxWorks® 7
 
 # Overview
 
-The Google Test support for VxWorks® 7 provides the makefiles for building the
-latest OpenCV release on VxWorks.
-
-This layer is an adapter to make standard OpenCV build and run on
-VxWorks. This layer does not contain the OpenCV source, it only
-contains all functions required to allow OpenCV to build and execute
-on top of VxWorks. Use this layer to add the OpenCV library to your 
-user space, and to build the OpenCV example applications as RTPs.
-
-NOTE: OpenCV 4.x is not part of any VxWorks® product. If you need help, 
-use the resources available or contact your Wind River sales representative 
-to arrange for consulting services.
+The Google Test support for VxWorks® 7 provides the makefiles and source 
+files derived form https://github.com/google/googletest and VxWorks layer
+configuration files to buid google test to a static library. The static 
+library can be linked to DKM and RTP to support the google test framwork.
 
 # Project License
 
@@ -59,18 +51,5 @@ to confirm that the layer has been found.
 
 
 # Legal Notices
-
-All product names, logos, and brands are property of their respective owners. All company, 
-product and service names used in this software are for identification purposes only. 
-Wind River and VxWorks are registered trademarks of Wind River Systems, Inc.
-
-Disclaimer of Warranty / No Support: Wind River does not provide support 
-and maintenance services for this software, under Wind River’s standard 
-Software Support and Maintenance Agreement or otherwise. Unless required 
-by applicable law, Wind River provides the software (and each contributor 
-provides its contribution) on an “AS IS” BASIS, WITHOUT WARRANTIES OF ANY 
-KIND, either express or implied, including, without limitation, any warranties 
-of TITLE, NONINFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR 
-PURPOSE. You are solely responsible for determining the appropriateness of 
-using or redistributing the software and assume any risks associated with 
-your exercise of permissions under the license.
+Google Test has been modified for interoperability with the VxWorks real-time
+operating system. Google is a trademark of Google LLC.
