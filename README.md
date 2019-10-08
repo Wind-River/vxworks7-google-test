@@ -51,5 +51,27 @@ to confirm that the layer has been found.
 
 
 # Legal Notices
+
 Google Test has been modified for interoperability with the VxWorks real-time
 operating system. Google is a trademark of Google LLC.
+
+All product names, logos, and brands are property of their respective owners.All
+company, product and service names used in this software are for identification
+purposes only. Wind River and VxWorks are registered trademarks of Wind River
+Systems.
+
+Disclaimer of Warranty / No Support: Wind River does not provide support and
+maintenance services for this software, under Wind River's standard Software
+Support and Maintenance Agreement or otherwise. Unless required by applicable
+law, Wind River provides the software (and each contributor provides its
+contribution) on an AS IS BASIS, WITHOUT WARRANTIES OF ANY KIND, either express
+or implied, including, without limitation, any warranties of TITLE,
+NONINFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are
+solely responsible for determining the appropriateness of using or
+redistributing the software and assume ay risks associated with your exercise of
+permissions under the license.
+
+This BSP is not covered by Wind River's standard support. Should you need
+support, please work with the community, or should you need commercial support,
+please contact your local Wind River Sales Representative.
+
