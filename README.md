@@ -88,6 +88,7 @@ Create the VxWorks 7 VxWorks source build (VSB) and VxWorks image project (VIP) 
 ## Build DKM project with gtest library
 
 1.  Create a DKM project, add .cc file and write down your test code. Add the test entry in your .cc file. 
+
         int main()
         {
             int argc = 1;
@@ -108,8 +109,8 @@ to exist at the same time. The current dkm has to be unloaded for the next one t
 Two help functions GTEST_UNLOAD_SELF and RUN_ALL_TESTS_AND_UNLOAD_SELF are provided to
 replace the  RUN_ALL_TESTS. The purpose is unload the dkm itself.
 There are two style in function main depending on if the test rusult is return
-a. Return with getting the testing result.
 
+a. Return with getting the testing result.
         int main()
         {
             int argc = 1;
