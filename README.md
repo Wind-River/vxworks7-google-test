@@ -108,7 +108,7 @@ The namespace in kernel isn't isolated between different dkms, Only one google t
 to exist at the same time. The current dkm has to be unloaded for the next one to work properly.
 Two help functions GTEST_UNLOAD_SELF and RUN_ALL_TESTS_AND_UNLOAD_SELF are provided to
 replace the  RUN_ALL_TESTS. The purpose is unload the dkm itself.
-There are two style in function main depending on if the test rusult is return
+There are two style in function main depending on if the test rusult is returned.
 
 a. Return with getting the testing result.
 
