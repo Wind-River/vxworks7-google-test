@@ -42,7 +42,7 @@ Windows. Developers working on a Microsoft Windows host may also set the system
 environment variables. On Microsoft Windows 10, these can be found in the 
 Control Panel under View advanced system Settings. Click the "Advanced" tab to
 find the "Environment Variables" button. From here you may set WIND_LAYER_PATHS
-to point to the vxworks7-layers-for-opencv. Please refer to the VxWorks 
+to point to the vxworks7-google-test. Please refer to the VxWorks 
 documentation for details on the WIND_LAYER_PATHS variable.
 
 2. Confirm the layer is present in your VxWorks 7 installation. In a VxWorks 
