@@ -50,6 +50,88 @@ development shell, you may run "vxprj vsb listAll" and look for GTEST_1_8_0_0
 to confirm that the layer has been found.
 
 
+## Creating the VSB and VIP Using WrTool
+
+Create the VxWorks 7 VxWorks source build (VSB) and VxWorks image project (VIP) using either the Wind River Workbench environment or the command line tool **WrTool**. This procedure uses the *vxsim_linux* board support package (BSP) as an example.  
+
+1. Set the environment variable and change the directory.
+
+        export WIND_WRTOOL_WORKSPACE=$HOME/WindRiver/workspace   
+        cd $WIND_WRTOOL_WORKSPACE
+
+2. Create the VSB using the **WrTool**.
+
+        wrtool prj vsb create -force -bsp vxsim_linux myVSB -S
+        cd myVSB
+        wrtool prj vsb config -w -add _WRS_CONFIG_GTEST=y
+        make -j[jobs]  
+        cd ..
+
+3. Create the VIP using the **WrTool**.
+
+        wrtool prj vip create -force -vsb myVSB -profile PROFILE_STANDALONE_DEVELOPMENT vxsim_linux llvm myVIP
+        cd myVIP
+        wrtool prj vip component add INCLUDE_GTEST
+        cd ..
+
+
+## Build RTP project with gtest library
+
+1.  In your RTP project, create a .cc file and write down your test code. 
+    No need to add test entry for RTP, compiler will generate one automatically.
+
+2.  Build Properties->Libraries, Add "-l ${VSB_DIR}/usr/*/common/libgtest.a". 
+
+3.  Build your RTP project.
+
+
+## Build DKM project with gtest library
+
+1.  Create a DKM project, add .cc file and write down your test code. Add the test entry in your .cc file. 
+        int main()
+        {
+            int argc = 1;
+            char *argv = (char *)"your dkm binary path, empty string also works";
+            ::testing::InitGoogleTest(&argc, &argv);
+            return RUN_ALL_TESTS_AND_UNLOAD_SELF();
+        }
+   
+2.  Add libgtest.a to DKM Project properties -> build properties -> Libraries
+        -L $(VSB_DIR)/krnl/SIMLINUX/common
+        -l gtest
+
+3.  Build your DKM project.
+
+
+The namespace in kernel isn't isolated between different dkms, Only one google test instance is allowed 
+to exist at the same time. The current dkm has to be unloaded for the next one to work properly.
+Two help functions GTEST_UNLOAD_SELF and RUN_ALL_TESTS_AND_UNLOAD_SELF are provided to
+replace the  RUN_ALL_TESTS. The purpose is unload the dkm itself.
+There are two style in function main depending on if the test rusult is return
+a. Return with getting the testing result.
+
+        int main()
+        {
+            int argc = 1;
+            char *argv = (char *)"your dkm binary path, empty string also works";
+            ::testing::InitGoogleTest(&argc, &argv);
+            ret = RUN_ALL_TESTS()
+            if(ret>0)
+            do some work ;
+            return GTEST_UNLOAD_SELF();
+        }
+ 
+b.  Return without getting the testing result.
+
+        int main()
+        {
+            int argc = 1;
+            char *argv = (char *)"your dkm binary path, empty string also works";
+            ::testing::InitGoogleTest(&argc, &argv);
+            return RUN_ALL_TESTS_AND_UNLOAD_SELF();
+        }
+
+
 # Legal Notices
 
 Google Test has been modified for interoperability with the VxWorks real-time
