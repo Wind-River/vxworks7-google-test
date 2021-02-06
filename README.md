@@ -28,7 +28,7 @@ file.
 * The build system will need to download source code from github.com.  A
   working Internet connection with access to both sites is required.
 
-* Install the git tool and ensure it oeprates from the command line.
+* Install the git tool and ensure it operates from the command line.
 
 ### Setup
 
