@@ -651,6 +651,11 @@ class GTEST_API_ UnitTestImpl {
   void AddTestInfo(Test::SetUpTestCaseFunc set_up_tc,
                    Test::TearDownTestCaseFunc tear_down_tc,
                    TestInfo* test_info) {
+#if GTEST_HAS_DEATH_TEST
+    // pick up below commit to fix invalid CWD issue
+    // https://github.com/google/googletest/
+    // pull/3090/commits/e5686bb18b52dc29312a7b79c3d6ca2c826c31ed
+      
     // In order to support thread-safe death tests, we need to
     // remember the original working directory when the test program
     // was first invoked.  We cannot do this in RUN_ALL_TESTS(), as
@@ -663,7 +668,8 @@ class GTEST_API_ UnitTestImpl {
       GTEST_CHECK_(!original_working_dir_.IsEmpty())
           << "Failed to get the current working directory.";
     }
-
+#endif
+      
     GetTestCase(test_info->test_case_name(),
                 test_info->type_param(),
                 set_up_tc,
